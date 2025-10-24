@@ -18,18 +18,20 @@ function App() {
   useGSAP();
 
   return (
-    <div className="App">
-      <Loader />
+    <>
       <BubbleContainer />
-      <DashboardCard />
-      <HeroSection />
-      <ProblemVideoSection />
-      <ScrollyContainer />
-      <MapSection />
-      <TimelineSection />
-      <ContextSection />
-      <SourcesSection />
-    </div>
+      <div className="App">
+        <Loader />
+        <DashboardCard />
+        <HeroSection />
+        <ProblemVideoSection />
+        <ScrollyContainer />
+        <MapSection />
+        <TimelineSection />
+        <ContextSection />
+        <SourcesSection />
+      </div>
+    </>
   );
 }
 

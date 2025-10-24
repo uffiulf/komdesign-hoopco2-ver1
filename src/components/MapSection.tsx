@@ -30,15 +30,29 @@ const MapSection: React.FC = () => {
         <p>I motsetning til importert CO2 fra Europa, leveres Hoop sin gass fra Veas i Asker direkte til kunder i Oslo-området. Dette reduserer transportutslipp og styrker den lokale sirkulærøkonomien.</p>
       </div>
       <div className="map-container">
-        <svg className="map-svg" viewBox="0 0 200 150">
-          {/* Simplified map outline of Oslo area */}
-          <path d="M 10 140 Q 50 100, 80 90 T 150 40 L 190 10" fill="none" stroke="#333a45" strokeWidth="2" />
-          <circle id="veas-point" cx="80" cy="90" r="3" fill="var(--color-primary)" />
-          <text x="75" y="105" fontSize="6" fill="#f0f4f8">VEAS</text>
-          <circle id="customer-point" cx="150" cy="40" r="3" fill="var(--color-green)" />
-          <text x="145" y="35" fontSize="6" fill="#f0f4f8">Kunde</text>
+        <svg className="map-svg" viewBox="0 0 200 200">
+          {/* Simplified map outline of Oslo Fjord */}
+          <path 
+            d="M 50 180 C 30 150, 20 120, 30 90 S 60 40, 90 20 L 110 10 C 130 20, 150 40, 170 70 S 180 150, 160 180 Z" 
+            fill="#161625" 
+            stroke="#333a45" 
+            strokeWidth="1"
+          />
+          {/* Veas Location */}
+          <circle id="veas-point" cx="65" cy="110" r="3" fill="var(--color-primary)" />
+          <text x="40" y="115" fontSize="6" fill="#f0f4f8">VEAS</text>
+          {/* Customer Location (Oslo) */}
+          <circle id="customer-point" cx="105" cy="50" r="3" fill="var(--color-green)" />
+          <text x="110" y="55" fontSize="6" fill="#f0f4f8">Oslo</text>
           {/* Animated path */}
-          <path id="map-path" d="M 82 88 Q 110 60, 148 42" fill="none" stroke="var(--color-green)" strokeWidth="1.5" />
+          <path 
+            id="map-path" 
+            d="M 67 108 Q 85 80, 103 52" 
+            fill="none" 
+            stroke="var(--color-green)" 
+            strokeWidth="1.5" 
+            strokeLinecap="round"
+          />
         </svg>
       </div>
     </section>

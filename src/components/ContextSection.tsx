@@ -6,7 +6,7 @@ const ContextSection: React.FC = () => {
       <div style={{ textAlign: 'center', maxWidth: '65ch' }}>
         <h2>Tillit i et Uryddig Marked</h2>
         <p>
-          Karbonmarkedet er preget av en tillitskrise. Store aktører har blitt avslørt i å selge kreditter fra prosjekter med tvilsom eller ikke-eksisterende effekt, ofte tusenvis av mil unna. Dette har ført til utbredt "grønnvasking".
+          Karbonmarkedet er preget av en dyp tillitskrise. En nylig skandale, avslørt av en <a href="https://www.dw.com/en/how-a-chinese-firm-ran-a-billion-euro-carbon-credit-scam/a-71010148" target="_blank" rel="noopener noreferrer">rapport fra DW</a>, viste hvordan et kinesisk selskap, China National Building Material Group (CNBM), genererte milliarder av euro fra karbonkreditter basert på prosjekter som allerede var lønnsomme uten kredittene. Dette er et klassisk eksempel på manglende "additionalitet" – kredittene representerte ingen reell reduksjon i utslipp utover det som ville skjedd uansett. Slike hendelser har ført til utbredt "grønnvasking" og svekket tilliten til abstrakte, ikke-sporbare kreditter globalt.
         </p>
       </div>
 
@@ -14,9 +14,9 @@ const ContextSection: React.FC = () => {
         <div className="comparison-box risk">
           <h3>Risikabelt: Abstrakte Kreditter</h3>
           <ul>
-            <li>❌ Ofte basert på vage estimater</li>
-            <li>❌ Vanskelig å verifisere (f.eks. en skog i utlandet)</li>
-            <li>❌ Risiko for dobbelt-telling og svindel</li>
+            <li>❌ Ofte basert på vage estimater fra prosjekter i utlandet.</li>
+            <li>❌ Vanskelig å verifisere reell effekt og additionalitet.</li>
+            <li>❌ Risiko for dobbelt-telling og ren svindel (som CNBM-saken).</li>
             <li>❌ Uklar "additionalitet" - ville tiltaket skjedd uansett?</li>
           </ul>
         </div>
@@ -24,15 +24,15 @@ const ContextSection: React.FC = () => {
         <div className="comparison-box verified">
           <h3>Verifisert: Fysisk, Målbart Karbon</h3>
           <ul>
-            <li>✅ Hvert eneste kilo CO2 er fysisk fanget og målt</li>
-            <li>✅ Full sporbarhet fra kilde til kunde</li>
-            <li>✅ Lokal, norsk verdikjede</li>
-            <li>✅ Garantert 100% additionalitet</li>
+            <li>✅ Hvert eneste kilo CO2 er fysisk fanget og målt på Veas.</li>
+            <li>✅ Full sporbarhet fra kilde til kunde via loggføring.</li>
+            <li>✅ 100% lokal, norsk verdikjede.</li>
+            <li>✅ Garantert 100% additionalitet – uten fangsten ville CO2-en blitt sluppet ut.</li>
           </ul>
         </div>
       </div>
       <p style={{ textAlign: 'center', maxWidth: '65ch', opacity: 0.8, marginTop: '2rem' }}>
-        Hoop CO2 sin modell er annerledes. De selger ikke en abstrakt kreditt, men et fysisk produkt. Dette gir en sporbarhet og sikkerhet som markedet skriker etter.
+        Hoop CO2 sin modell er fundamentalt annerledes. De selger ikke en abstrakt kreditt, men et fysisk produkt. Dette gir en sporbarhet og sikkerhet som markedet skriker etter.
       </p>
     </section>
   );

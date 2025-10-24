@@ -1,0 +1,147 @@
+:root {
+  --font-main: 'Inter', sans-serif;
+  --color-text: #f0f4f8;
+  --color-bg-light: #f9f9f9;
+  --color-bg-dark: #1a1a2e;
+  --color-primary: #4a90e2;
+  --color-green: #50e3c2;
+  --color-red: #e35050;
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: var(--font-main);
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-bg-dark);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  overflow-x: hidden; /* The fix, moved to body to prevent breaking sticky positioning */
+}
+
+/* Global content wrapper to limit overall width */
+.App {
+  max-width: 1400px; /* Max width for the entire app content */
+  margin: 0 auto; /* Center the content */
+  position: relative; /* Needed for sticky elements */
+  /* overflow-x: hidden; <-- REMOVED FROM HERE */
+}
+
+h1, h2, h3, p {
+  max-width: 35ch; /* Limit text width for better readability */
+}
+
+/* Scrollytelling Structure */
+.scrolly-container {
+  display: flex;
+  position: relative;
+  margin-top: 10vh;
+}
+
+.scrolly-text-column {
+  width: 45%;
+  padding: 0 5%; /* Adjusted padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.scrolly-graphic-column {
+  width: 55%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-scene {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text to the left */
+  opacity: 0.3;
+  transition: opacity 0.6s ease-out;
+  padding: 0 2rem; /* Added horizontal padding for text scenes */
+}
+
+.text-scene.is-active {
+  opacity: 1;
+}
+
+.text-scene h2 {
+  font-size: 2.5rem;
+}
+
+.graphic-step {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.graphic-step.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* === Responsive Design === */
+@media (max-width: 1024px) {
+  .scrolly-text-column {
+    padding: 0 3%; /* Slightly less padding on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  h1, h2, h3, p {
+    max-width: 100%; /* Remove text width limit on mobile */
+  }
+
+  .scrolly-container {
+    flex-direction: column;
+  }
+
+  .scrolly-text-column, .scrolly-graphic-column {
+    width: 100%;
+  }
+
+  .scrolly-graphic-column {
+    height: 60vh; /* Make graphic smaller on mobile */
+    order: -1; /* Show graphic before text */
+    padding: 2rem 0;
+  }
+
+  .text-scene {
+    min-height: auto; /* Let content decide height */
+    padding: 5rem 2rem; /* Add padding for spacing */
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-scene h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Hero Section specific adjustments for mobile */
+  #scene-1 {
+    padding: 5rem 2rem; /* Ensure hero section has padding */
+    text-align: center;
+    align-items: center;
+  }
+
+  #scene-1 h1, #scene-1 p {
+    max-width: 100%; /* Allow hero text to take full width */
+  }
+}

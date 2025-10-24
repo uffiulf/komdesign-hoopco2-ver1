@@ -1,0 +1,373 @@
+/* === Dashboard Card === */
+.dashboard-card {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  padding: 1.5rem 2rem;
+  background-color: rgba(26, 26, 46, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #f0f4f8;
+  text-align: right;
+  z-index: 100;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0; /* Start hidden for fade-in */
+}
+
+#co2-teller, #co2-teller-fangst {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+#teller-label, #teller-label-fangst {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+#co2-teller {
+  color: var(--color-red);
+}
+
+#co2-teller-fangst {
+  color: var(--color-green);
+  opacity: 0;
+  visibility: hidden;
+}
+
+#teller-label-fangst {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* === Infographics === */
+#infografikk-1, #infografikk-2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #f0f4f8;
+}
+
+.infographic-box {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container {
+  text-align: center;
+}
+
+.anim-label {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+#beccs-skip {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  top: 5%;
+  opacity: 0; /* Start hidden */
+}
+
+#beccs-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+}
+
+
+/* === Hero Section (Scene 1) === */
+#scene-1 h1 {
+  font-size: 3.5rem;
+  max-width: 800px;
+}
+
+#scene-1 p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  max-width: 600px;
+}
+
+
+/* === Problem Video Section === */
+.problem-video-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 4rem 0;
+  padding: 0 2rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.problem-video {
+  width: 48%; /* Slightly less than 50% to account for gap */
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* === Comparison Section === */
+.comparison-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.comparison-box {
+  width: 50%;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.comparison-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.comparison-box ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.comparison-box ul li {
+  margin-bottom: 0.8rem;
+  overflow-wrap: break-word; /* The fix: force text to wrap */
+  word-wrap: break-word; /* Fallback for older browsers */
+  hyphens: auto; /* Optional: for nicer word breaks */
+}
+
+.comparison-box.risk {
+  border-color: rgba(227, 80, 80, 0.5);
+  background-color: rgba(227, 80, 80, 0.05);
+}
+
+.comparison-box.verified {
+  border-color: rgba(80, 227, 194, 0.5);
+  background-color: rgba(80, 227, 194, 0.05);
+}
+
+/* === Map Section === */
+.map-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 10rem 2rem;
+}
+
+.map-text {
+  width: 40%;
+  max-width: 40ch;
+}
+
+.map-container {
+  width: 50%;
+  max-width: 400px;
+}
+
+.map-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* === Timeline Section === */
+.timeline-section {
+  padding: 5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-section h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.timeline-container {
+  position: relative;
+  border-left: 2px solid var(--color-primary);
+  padding: 0 2rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 4rem;
+  padding-left: 2rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-year {
+  position: absolute;
+  top: 0;
+  left: -4rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+}
+
+/* === Sources Section === */
+.sources-section {
+  padding: 10rem 2rem 5rem 2rem;
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+.sources-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sources-list li {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--color-primary);
+}
+
+.sources-list a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.sources-list a:hover {
+  opacity: 0.8;
+}
+
+
+/* === Responsive Adjustments for Components === */
+@media (max-width: 768px) {
+  .dashboard-card {
+    top: auto;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 300px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
+
+  #co2-teller, #co2-teller-fangst {
+    font-size: 2rem;
+  }
+
+  #teller-label, #teller-label-fangst {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #infografikk-1, #infografikk-2 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .infographic-box {
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+  }
+
+  .icon-container {
+    margin-bottom: 1rem;
+  }
+
+  #beccs-skip {
+    width: 100px;
+  }
+
+  #beccs-svg {
+    max-width: 200px;
+  }
+
+  #scene-1 h1 {
+    font-size: 2.5rem;
+  }
+
+  #scene-1 p {
+    font-size: 1rem;
+  }
+
+  .problem-video-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .problem-video {
+    width: 90%;
+  }
+
+  .comparison-container {
+    flex-direction: column;
+  }
+
+  .comparison-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .map-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+
+  .map-text, .map-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .timeline-container {
+    border-left: none;
+    padding: 0;
+  }
+
+  .timeline-item {
+    padding-left: 0;
+    border-bottom: 1px solid #333a45;
+    padding-bottom: 2rem;
+  }
+
+  .timeline-year {
+    position: static;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .sources-section {
+    padding: 5rem 2rem;
+  }
+}

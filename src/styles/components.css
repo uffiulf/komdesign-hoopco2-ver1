@@ -83,7 +83,7 @@
 #beccs-skip {
   position: absolute;
   width: 150px;
-  top: 10%;
+  top: 26%; /* Final adjustment to connect the boat to the pipe */
   left: 50%;
   transform: translateX(-50%); /* Center the boat horizontally */
   opacity: 0; /* Start hidden for animation */

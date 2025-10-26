@@ -5,6 +5,10 @@ on:
     branches:
       - main # Trigger the action on push to the main branch
 
+# Add write permissions to allow the action to push to the gh-pages branch
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -16,10 +20,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Use a recent LTS version
+          node-version: '18'
+          cache: 'npm' # Enable caching for npm
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci # Use ci for faster, more reliable installs
 
       - name: Build
         run: npm run build

@@ -2,7 +2,10 @@ import { gsap } from 'gsap';
 
 export const initBubbleAnimations = () => {
   const bubbleContainer = document.getElementById('bubble-container');
-  if (!bubbleContainer) return;
+  if (!bubbleContainer) {
+    console.warn("Bubble container (#bubble-container) not found. Bubbles will not animate.");
+    return;
+  }
 
   let bubbleInterval: NodeJS.Timeout;
 
@@ -16,6 +19,13 @@ export const initBubbleAnimations = () => {
     bubble.style.left = Math.random() * 100 + '%';
     bubble.style.animationDuration = Math.random() * 5 + 8 + 's';
     bubble.style.animationDelay = Math.random() * 3 + 's';
+
+    // Generate random blueish color with varying opacity
+    const r = 74; // Fixed red component
+    const g = 144; // Fixed green component
+    const b = 226; // Fixed blue component
+    const a = Math.random() * (0.4 - 0.1) + 0.1; // Random opacity between 0.1 and 0.4
+    bubble.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
 
     bubbleContainer.appendChild(bubble);
 
@@ -36,9 +46,6 @@ export const initLoaderAnimation = () => {
   const loader = document.getElementById('loader');
   if (!loader) return;
 
-  // The window 'load' event was unreliable across browsers with React.
-  // This runs the animation directly when the component mounts (via useEffect).
-  // A small delay ensures the loader is rendered before it starts fading out.
   gsap.to(loader, {
     opacity: 0,
     duration: 0.5,

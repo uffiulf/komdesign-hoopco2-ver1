@@ -36,11 +36,17 @@ export const initLoaderAnimation = () => {
   const loader = document.getElementById('loader');
   if (!loader) return;
 
-  window.addEventListener('load', () => {
-    gsap.to(loader, { 
-      opacity: 0, 
-      duration: 0.5, 
-      onComplete: () => loader && (loader.style.display = 'none')
-    });
+  // The window 'load' event was unreliable across browsers with React.
+  // This runs the animation directly when the component mounts (via useEffect).
+  // A small delay ensures the loader is rendered before it starts fading out.
+  gsap.to(loader, {
+    opacity: 0,
+    duration: 0.5,
+    delay: 0.2, // Small delay to prevent race conditions
+    onComplete: () => {
+      if (loader) {
+        loader.style.display = 'none';
+      }
+    },
   });
 };

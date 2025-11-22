@@ -26,12 +26,12 @@ const ScrollyContainer: React.FC = () => {
         <TextScene 
           id="scene-3" 
           title="Resultatet: Sirkulærøkonomi i Praksis (CCU)" 
-          text={`"Dette er kortreist, grønn CO2. I stedet for å importere gassen fra Europa, kan bryggerier og brusprodusenter nå hente den lokalt. Det er sirkulærøkonomi i praksis." - Kjetil Wang-Hansen, Daglig leder i Hoop CO2`}
+          text={`"Dette er kortreist, grønn CO2. I stedet for å importere gassen fra Europa, kan bryggerier og brusprodusenter nå hente den lokalt. Det er sirkulærøkonomi i praksis." - Kjetil Wang-Hansen, Konsernsjef Veas AS`}
         />
         <TextScene 
           id="scene-4" 
           title="Fremtiden: Negative Utslipp (BECCS)" 
-          text={`"Ved å fange og lagre biogent CO2 permanent, fjerner vi karbon fra atmosfæren. Dette kalles Bio-Energy with Carbon Capture and Storage (BECCS), og er en nøkkelteknologi for å oppnå reelle, negative utslipp." - Jan Milton Berge, Daglig leder i Inherit`}
+          text={`"Ved å fange og lagre biogent CO2 permanent, fjerner vi karbon fra atmosfæren. Dette kalles Bio-Energy with Carbon Capture and Storage (BECCS), og er en nøkkelteknologi for å oppnå reelle, negative utslipp." - Jan Milton Berge, Daglig leder i Hoop CO2 AS`}
         />
       </div>
       <div className="scrolly-graphic-column">

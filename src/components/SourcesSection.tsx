@@ -9,7 +9,7 @@ const SourcesSection: React.FC = () => {
           <strong>Interne dokumenter:</strong> "Karbonfangst_Hoop_CO2.pdf" og "Markedets Risiko.pdf", levert av Hoop CO2 for prosjektet.
         </li>
         <li>
-          <strong>Intervjuer:</strong> Samtaler med Kjetil Wang-Hansen (Hoop CO2) og Jan Milton Berge (Inherit).
+          <strong>Intervjuer:</strong> Samtaler med Kjetil Wang-Hansen (Konsernsjef Veas AS) og Jan Milton Berge (Hoop CO2 AS).
         </li>
         <li>
           <strong>Teknologi:</strong> Informasjon om CarboPac-L-systemet fra <a href="https://bright-renewables.com/" target="_blank" rel="noopener noreferrer">Bright Renewables</a>.

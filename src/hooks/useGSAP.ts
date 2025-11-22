@@ -6,6 +6,7 @@ import { initCounterAnimations } from '../animations/counterAnimations';
 import { initParticleAnimations } from '../animations/particleAnimations';
 import { initBoatAnimations } from '../animations/boatAnimations';
 import { initBubbleAnimations, initLoaderAnimation } from '../animations/bubbleAnimations';
+import { initTimelineAnimations } from '../animations/timelineAnimations';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,7 @@ export const useGSAP = () => {
     initBoatAnimations();
     const cleanupBubbles = initBubbleAnimations(); // Get the cleanup function
     initLoaderAnimation();
+    initTimelineAnimations();
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());

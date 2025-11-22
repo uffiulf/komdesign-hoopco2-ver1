@@ -30,12 +30,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # Updated from 18 to 20
+          node-version: "20"
           cache: "npm"
       - name: Install dependencies
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE_PATH: /komdesign-hoopco2-ver1/ # Set the base path for Vite build
+      - name: Create .nojekyll file
+        run: touch ./dist/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

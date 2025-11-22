@@ -10,16 +10,17 @@ export const initBoatAnimations = () => {
   const beccsTidslinje = gsap.timeline({
     scrollTrigger: {
       trigger: "#scene-4",
-      start: "top 20%", // Start animation after scrolling 20% into the scene
-      end: "bottom bottom",
-      scrub: 1,
+      start: "top bottom", // Start when scene enters viewport
+      end: "bottom top", // End when scene leaves viewport - much longer scroll distance
+      scrub: 3, // Much slower animation - takes full scroll through scene
     }
   });
 
   // Animate the boat to the center
   beccsTidslinje.to("#beccs-skip", {
     x: 0, // Animate to its new centered position
-    ease: "power2.inOut",
+    ease: "power1.out", // Very gentle easing for slow entry
+    duration: 1, // Explicit duration for control
   });
 
   // Animate the pipe drawing and particles

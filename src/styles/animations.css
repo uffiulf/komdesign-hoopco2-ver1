@@ -7,6 +7,9 @@
   height: 100%;
   z-index: -1; /* Place it behind all other content */
   overflow: hidden; /* Prevent bubbles from causing scrollbars */
+  transform: translateZ(0); /* Force hardware acceleration for Firefox */
+  -moz-transform: translateZ(0); /* Firefox-specific */
+  will-change: contents; /* Optimize for dynamic content */
 }
 
 .bubble {
@@ -14,20 +17,24 @@
   bottom: -150px; /* Start further down */
   /* background-color is now set via JavaScript for random shades */
   border-radius: 50%;
-  animation: rise 25s infinite ease-in;
-  will-change: transform, opacity; /* Added opacity for performance */
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force hardware acceleration for Firefox */
+  -moz-transform: translateZ(0); /* Firefox-specific */
+  /* Animation is set inline via JavaScript for Firefox compatibility */
 }
 
 @keyframes rise {
   0% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) translateZ(0) scale(1);
+    -moz-transform: translateY(0) translateZ(0) scale(1); /* Firefox-specific */
     opacity: 1; /* Start at full opacity (of the element's given color) */
   }
   90% {
     opacity: 0.9; /* Gently fade during the rise */
   }
   100% {
-    transform: translateY(-120vh) scale(0.3);
+    transform: translateY(-120vh) translateZ(0) scale(0.3);
+    -moz-transform: translateY(-120vh) translateZ(0) scale(0.3); /* Firefox-specific */
     opacity: 0; /* Fade out completely at the end */
   }
 }
@@ -41,7 +48,9 @@
   background-color: var(--color-red);
   border-radius: 50%;
   box-shadow: 0 0 15px 5px var(--color-red);
-  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  will-change: transform, background-color, box-shadow; /* Optimize for smooth animation */
+  transform: translateZ(0); /* Force hardware acceleration */
+  /* Removed transition - GSAP handles all animations for smoother performance */
 }
 
 .beccs-particle {

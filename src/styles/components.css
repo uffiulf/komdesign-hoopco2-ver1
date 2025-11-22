@@ -214,14 +214,30 @@
 
 .timeline-container {
   position: relative;
-  border-left: 2px solid var(--color-primary);
   padding: 0 2rem;
+  transform-origin: top center; /* For animation */
+}
+
+/* Timeline line - positioned below year boxes */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-primary);
+  opacity: 0.3;
+  transform-origin: top center;
+  transform: scaleY(0); /* Start hidden, animated via JS */
+  z-index: 1;
 }
 
 .timeline-item {
   position: relative;
   margin-bottom: 4rem;
-  padding-left: 2rem;
+  padding-left: 6rem; /* More space between year box and content */
+  padding-top: 0.5rem;
 }
 
 .timeline-item:last-child {
@@ -231,14 +247,45 @@
 .timeline-year {
   position: absolute;
   top: 0;
-  left: -4rem;
+  left: -2.5rem;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-primary);
+  background: var(--color-bg-dark);
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  min-width: 80px;
+  text-align: center;
+  transform-origin: center;
+  will-change: transform, opacity;
+  z-index: 3; /* Above the line */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Horizontal line connecting year box to vertical line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.5rem;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--color-primary);
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.timeline-content {
+  margin-left: 1rem; /* Additional spacing from year box */
 }
 
 .timeline-content h3 {
   margin-top: 0;
+}
+
+.timeline-content {
+  will-change: transform, opacity; /* Optimize animation */
 }
 
 /* === Sources Section === */
